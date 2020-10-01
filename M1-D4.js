@@ -10,7 +10,7 @@ ASSIGNMENT RULES
 Write a function "area" which receives 2 parameters (l1,l2) and calculate the area of the rectangle.
 */
 
-let result = 0;
+/* let result = 0;
 let area = function (l1, l2) {
 
 
@@ -20,12 +20,37 @@ let area = function (l1, l2) {
 
 console.log(area(30,44))
 
+*/
+
 /* EXERCISE 2
 Write a function "crazySum" which receives two given integers. If the two values are same, then returns triple their sum.
 */
 
-/*let result=0
-let crazySum*/
+/* with randomly generated integers: 
+
+let int1= Math.floor(Math.random() * 10);
+let int2= Math.floor(Math.random() * 10); */
+
+let crazySum = function (int1, int2) {
+
+    if (int1 = int2) {
+        result = 3 * (int1 + int2)
+        return (result)
+    }
+    
+    else {
+        result = int1 + int2
+        return (result)
+    }
+}
+
+/* result with randomly generated integers:
+console.log(crazySum(int1,int2))
+*/
+
+console.log(crazySum(81, 81))
+console.log(crazySum(43, 45))
+
 
 /* EXERCISE 3
 Write a function "crazyDiff" that computes the 
