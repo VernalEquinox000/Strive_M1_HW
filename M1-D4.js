@@ -169,7 +169,8 @@ Write a function "cutString" to create a new string without the first and last c
 let cutString = function (fff) {
 
     let fff1 = fff.slice(0,-1)
-    return fff1
+    let fff2 = fff1.substring(1)
+    return fff2
 }
 
 console.log(cutString("PierdomenicoApruzzese"))
