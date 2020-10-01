@@ -60,6 +60,20 @@ the specified
 number is greater than 19.
 */
 
+let crazyDiff = function (x) {
+    if (Math.abs(x) > 19) {
+        result = 3 * Math.abs(x - 19)
+        return (result)
+    }
+    else {
+        result = Math.abs(x - 19)
+        return (result)
+    }
+}
+
+console.log(crazyDiff(17))
+console.log(crazyDiff(67))
+
 /* EXERCISE 4
 Write a function "boundary" which accept an integer N and returns true if N is within 20 and 100 (included) or equal to 400.
 */
