@@ -145,7 +145,15 @@ console.log(check3and7(100))
 Write a function "reverseString" to reverse programmatically a given string (es.: Strive => evirtS).
 */
 
-/* WRITE YOUR CODE HERE */
+let reverseString = function (thisString) {
+
+    let splitString = thisString.split("");
+    let thisString1 = splitString.reverse(); 
+    let thisString2 = thisString1.join(""); 
+    return thisString2
+}
+
+console.log(reverseString("PierdomenicoApruzzese"))
 
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
