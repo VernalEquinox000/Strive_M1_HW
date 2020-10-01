@@ -125,7 +125,21 @@ Write a function "check3and7" which accepts a positive number and check if it is
 HINT: Module Operator
 */
 
-/* WRITE YOUR CODE HERE */
+let check3and7 = function (z) {
+    if (z % 3 === 0) {
+        return("multiple of 3")
+    }
+    else if (z % 7 === 0) {
+        return("multiple of 7")
+    }
+    else {
+        return ("not a multiple of 3 nor 7")
+    }
+}
+
+console.log(check3and7(33))
+console.log(check3and7(49))
+console.log(check3and7(100))
 
 /* EXERCISE 7
 Write a function "reverseString" to reverse programmatically a given string (es.: Strive => evirtS).
