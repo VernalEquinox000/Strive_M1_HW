@@ -40,9 +40,9 @@ console.log(rand)
 */
 
 let Me = {
-  Name : "Pierdomenico",
-  Surname : "Apruzzese",
-  Age : 37,
+  Name : "Adelmo",
+  Surname : "Fornaciari",
+  Age : 67,
 }
 
 console.log(Me)
@@ -75,7 +75,7 @@ console.log(Me)
 */
 
 let Dice = function () {
-  let face = (Math.round(Math.random() * 5)+1)
+  let face = (Math.round(Math.random() * 5)+1)  //also Math.ceil! 
   return (face)
 }
   
@@ -331,6 +331,23 @@ console.log (CountMovies())
       Write the function GetMovieById that receives an ID and returns the movie with the given ID
   */
 
+  /*
+
+let movieId = ""
+let movieOut =""
+let GetMovieById  = function (movieId) {
+   for (let i = 0; i < movies.length; i++) {
+     if (movies[i].imdbID === movieId) {
+          movieOut=movies[i].Title
+        }
+   }
+   return movieOut
+     }
+console.log(GetMovieById("tt4154796"))
+console.log(GetMovieById("tt4154756"))
+
+*()
+
   /* Ex.17
       Write the function SumYears that returns the sum of the years the movie has been produced
   */
@@ -489,3 +506,12 @@ console.log (CountMovies())
         "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   }]
     
+let ySum = 0;
+let SumYears = function () {
+    for (let i = 0; i < movies.length; i++) {
+        
+          ySum += parseInt(movies[i].Year)
+    }
+    return ySum
+      }
+      console.log (SumYears())
