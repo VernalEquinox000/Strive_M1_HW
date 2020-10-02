@@ -33,7 +33,7 @@ let int2= Math.floor(Math.random() * 10); */
 
 let crazySum = function (int1, int2) {
 
-    if (int1 = int2) {
+    if (int1 = int2) { // ERROR = USE === 
         result = 3 * (int1 + int2)
         return (result)
     }
@@ -145,6 +145,8 @@ console.log(check3and7(100))
 Write a function "reverseString" to reverse programmatically a given string (es.: Strive => evirtS).
 */
 
+//it worked with a loop also
+
 let reverseString = function (thisString) {
 
     let splitString = thisString.split("");
@@ -159,7 +161,12 @@ console.log(reverseString("PierdomenicoApruzzese"))
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
 */
 
-/* WRITE YOUR CODE HERE */
+
+let upperFirst = function (upString) {
+    
+}
+
+
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
@@ -182,7 +189,7 @@ let M = 0;
 let arrayRandom = []
 let giveMeRandom = function (M) {
     for (i = 0; i <= M; i++) {
-        arrayRandom[i] = (Math.round(Math.random() * 10))
+        arrayRandom[i] = (Math.round(Math.random() * 10)) // also arrayRandom.push (Math.random....)
         console.log(arrayRandom[i])
     }
     return arrayRandom
