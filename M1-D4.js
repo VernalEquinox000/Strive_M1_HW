@@ -22,6 +22,14 @@ console.log(area(30,44))
 
 */
 
+//OR
+
+
+let area = (l1, l2) => l1 * l2
+
+console.log(area(10,20))
+
+
 /* EXERCISE 2
 Write a function "crazySum" which receives two given integers. If the two values are same, then returns triple their sum.
 */
@@ -31,9 +39,9 @@ Write a function "crazySum" which receives two given integers. If the two values
 let int1= Math.floor(Math.random() * 10);
 let int2= Math.floor(Math.random() * 10); */
 
-let crazySum = function (int1, int2) {
+/*let crazySum = function (int1, int2) {
 
-    if (int1 = int2) { // ERROR = USE === 
+    if (int1 === int2) { // note: ERROR = USE === 
         result = 3 * (int1 + int2)
         return (result)
     }
@@ -43,6 +51,20 @@ let crazySum = function (int1, int2) {
         return (result)
     }
 }
+*/
+//OR
+
+
+let crazySum = (int1, int2) => {
+    if (int1 === int2) {
+        return (3*(int1+int2))
+    }
+}
+    
+console.log(crazySum(10, 10))
+console.log(crazySum(10,11))
+
+
 
 /* result with randomly generated integers:
 console.log(crazySum(int1,int2))
@@ -99,25 +121,22 @@ console.log(boundary(9))
 Write a function "strivify" which accepts a string S. Add to S "Strive" in front of a given string, if the given string begins with "Strive" then return the original string.
 */
 
-const striveString = "Strive"
-//const splStr = striveString.slice(0, 7)
-
 
 let strivify = function (S) {
     
     
-    if (S.slice(0,6)===striveString) {
-        return (S.slice(6,))
+    if (S.slice(0,6)==="Strive") {
+        return (S)
     }
     else {
-        return (striveString.concat(S))
+        return (("Strive").concat(S))
     }   
 }
 
 console.log(strivify("Piero"))
 console.log(strivify("Strive"))
 console.log(strivify("StriveThis"))
-//console.log(splStr)
+
 
 
 /* EXERCISE 6
@@ -147,7 +166,7 @@ Write a function "reverseString" to reverse programmatically a given string (es.
 
 //it worked with a loop also
 
-let reverseString = function (thisString) {
+/*let reverseString = function (thisString) {
 
     let splitString = thisString.split("");
     let thisString1 = splitString.reverse(); 
@@ -155,16 +174,38 @@ let reverseString = function (thisString) {
     return thisString2
 }
 
-console.log(reverseString("PierdomenicoApruzzese"))
+console.log(reverseString("supercalifragilistichespiralidoso"))*/
+
+//OR
+
+let reverseString = (thisString) => {
+    return (thisString.split("").reverse().join(""))
+}
+
+console.log(reverseString("loremipsum"))
+
+
+
+
 
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
 */
 
 
-let upperFirst = function (upString) {
+let upperFirst = function (upString) { 
+    upArray = upString.split(" ")
+    
+    for (i = 0; i < upArray.length; i++) {
+        let letterFirst = upArray[i].charAt(0).toUpperCase();
+        upArray[i] = letterFirst + upArray[i].substr(1);
+    }
+
+    return upArray.join(" ");
     
 }
+
+console.log(upperFirst("What a wonderful world"))
 
 
 
@@ -173,14 +214,12 @@ Write a function "cutString" to create a new string without the first and last c
 */
 
 
-let cutString = function (fff) {
+let cutString = fff => {
 
-    let fff1 = fff.slice(0,-1)
-    let fff2 = fff1.substring(1)
-    return fff2
+    return fff.slice(0,-1).substr(1)
 }
 
-console.log(cutString("PierdomenicoApruzzese"))
+console.log(cutString("IamTheWalrus"))
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10

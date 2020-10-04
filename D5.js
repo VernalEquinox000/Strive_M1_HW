@@ -101,18 +101,17 @@ console.log(WhoIsBigger(11, 11))
     Ex. SplitMe("I love coding") => returns [ "I","Love","Coding"]
 */
 
-//let splitString = "SergioFucchiFaFrittelle"
-
-
-/*let SplitMe = function (splitString) {
-
+let SplitMe = function (splitString) {
+  let splitArray = splitString.split(" ")
+  for (i = 0; i < splitArray.length; i++) {
+    let firstLetter = splitArray[i].charAt(0).toUpperCase();
+    splitArray[i] = firstLetter + splitArray[i].substr(1)
+  }
+  return splitArray.join(" ")
+    
 }
 
-let arrayOfSplits = splitString.split("F");  //ANCORA DA FARE
-console.log(arrayOfSplits)
-let arrayFucchi= arrayOfSplits.join("F")
-console.log(arrayFucchi)
-console.log(splitString.substr(3)) */
+console.log(SplitMe ("I want it all and I want it now"))
 
 /* Ex.4
     Write the function DeleteOne that receives a string and a boolean. If the boolean is true, should return the string without the first letter, otherwise should remove the last one
@@ -169,8 +168,28 @@ console.log(IsThisAnEmail("someone@somewhere.com.ar"))
 
 let WhatDayIsIt = function () {
   let today = new Date();
-  return today
-}
+  let today1 = today.getDay();
+  switch (today1) {
+    case 0: return("today is Sunday")
+      break;
+    case 1: return("today is Monday")
+      break;
+    case 2: return("today is Tuesday")
+      break;
+    case 3: return("today is Wednesday")
+      break;
+    case 4: return("today is Thursday")
+      break;
+    case 5: return ("today is Friday")
+      break;
+    case 6: return ("today is Saturday")
+      break;
+  
+    default: return ("today is a NON-day")
+      break;
+  }
+
+  }
   console.log(WhatDayIsIt())
 
 
@@ -190,8 +209,11 @@ let RollTheDices = function (nOfRoll) {
     arrayOfRoll.push(Dice())
     sum+=arrayOfRoll[i]
   }
-  console.log(arrayOfRoll)
-  console.log(sum)
+  let diceResult = {
+    roll: arrayOfRoll,
+    total: sum
+  }
+  return diceResult
 }
 
 
@@ -203,32 +225,36 @@ console.log(RollTheDices(15))
      Write the function HowManyDays that receives a Date and return the number of days that has passed since that day.
   */
 
- function daysInMonth (day, month, year) {
+ /*function daysInMonth (day, month, year) {
   return new Date(year, month, day).getDate();
 }
 
-console.log(daysInMonth(3, 8, 2020))
+console.log(daysInMonth(3, 8, 2020))*/
 
 
   /* Ex.10
      Write the function IsTodayMyBDay that returns true if it's your birthday, false otherwise
   */
 
-/*myBday = 
-console.log(myBday)*/
 
 
-/*let IsTodayMyBday = function (myBday) {
-  if (myBday === WhatDayIsIt) {
-    return true
-  } 
-  else { return false }
+
+let IsTodayMyBday = function (bdayMonth, bdayDay) {
+  let dayToday = new Date();
+  let month = dayToday.getMonth() + 1;
+  let day = dayToday.getDate();
+  console.log(month)
+  console.log(day)
+
+  if (bdayMonth === month && bdayDay===day) { return ("Happy birthday") }
+  else {return ("It's not your birthday")}
  }
 
-console.log(IsTodayMyBday(2020, 7, 6))
-console.log(IsTodayMyBday(2020, 10, 2))
 
-*/
+console.log(IsTodayMyBday(7, 6))
+console.log(IsTodayMyBday(10, 4))
+
+
 
   // JS Arrays // Objs
   // NOTE: movies array is defined at the end of the file
@@ -237,6 +263,7 @@ console.log(IsTodayMyBday(2020, 10, 2))
      Write the function DeleteProp that receives an object and a string, and returns the object after deleting the property with that given name
   */
 
+  /*
 
 let delObject = {
   name: "Jiro",
@@ -252,7 +279,7 @@ let DeleteProp = function () {
 }
 console.log(DeleteProp())
 
-
+*/
 
   /* Ex.12 
       Write the function OlderMovie that finds the older movie in the array
@@ -351,6 +378,22 @@ console.log(GetMovieById("tt4154756"))
   /* Ex.17
       Write the function SumYears that returns the sum of the years the movie has been produced
   */
+
+/*
+
+let ySum = 0;
+let SumYears = function () {
+    for (let i = 0; i < movies.length; i++) {
+        
+          ySum += parseInt(movies[i].Year)
+    }
+    return ySum
+      }
+console.log (SumYears())
+
+*/
+
+
 
   /* Ex.18
       Write the function SearchMovie that receives a string and returns all the movies with that string in the title
@@ -506,12 +549,3 @@ console.log(GetMovieById("tt4154756"))
         "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   }]
     
-let ySum = 0;
-let SumYears = function () {
-    for (let i = 0; i < movies.length; i++) {
-        
-          ySum += parseInt(movies[i].Year)
-    }
-    return ySum
-      }
-      console.log (SumYears())
