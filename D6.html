@@ -1,0 +1,227 @@
+<html>
+<!--
+        You have been assigned to the creation of a Smartphone Shop Website.
+        The shop is just a showcase of the products of the shop with some extra informations.
+        No shopping cart / checkout features are required.
+        EX1.:
+        Add H1 title with the name of the shop
+        EX2.: 
+        Add a TABLE with the top 5 products of the shop
+        EX3.: 
+        Each product should have one image, title, description and price
+        EX4.:
+        Add Map to the shop 
+        EX5.: 
+        Add the links to Amazon products for each item in the table
+        EX6.:
+        Add a footer with the address and the name of the shop
+        EX7.: 
+        Add a message board where the user can type a message in it (only client side)
+        // EXTRA 
+        EX8.: 
+        Write a function to change the heading text
+        EX9.:
+        Write a function to change the page background color
+        EX10.:
+        Write a function to change the footer address with a fake one
+    -->
+
+<head>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        color: rgb( 200, 45, 45, 0.6)
+    }
+
+    h2 {
+        text-align: center;
+        font-size: large;
+    }
+
+    p {
+        text-align: center;
+        
+    }
+
+    table {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 100px;
+            border-color: blue;
+            }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+         width: 20%;
+         }
+
+    div {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+    }
+
+    footer {
+        text-align: center;
+        padding: 3px;
+        background-color: DarkSalmon;
+        color: white;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ok, I even tried to build the page through JS but I still have a looong road before I can DOMinate it
+<script>
+let newH1 = document.createElement('h1')
+newH1.innerText="Smartphone Shop Website"
+let body=document.querySelector('body')
+body.appendChild(newH1)
+newH1.style.color='rgb(100,2,5,0.4)'
+
+
+let table =document.createElement('table')
+table.setAttribute("id", 'table')
+body.appendChild(table)
+
+let row1= table.insertRow(0);
+let img1 = document.createElement('img'); 
+img1.src = 'https://www.androidworld.it/wp-content/uploads/2019/10/moto-g8-plus-800x800.png'; 
+row1.appendChild(img1);
+let div1 =document.createElement('div')
+div1.innerHTML="<h2>Motorola Moto G8 Plus<h2><br><p style='center'>Moto G7 updated by a bigger display!<br>Price: €600</p>"
+row1.appendChild(div1)
+
+
+
+let row2= table.insertRow(1);
+let img2 = document.createElement('img'); 
+img2.src = 'https://www.androidworld.it/wp-content/uploads/2020/09/poco-x3-11-800x800.png'; 
+row2.appendChild(img2);
+let row3= table.insertRow(2);
+let img3 = document.createElement('img'); 
+img3.src = 'https://www.androidworld.it/wp-content/uploads/2020/04/Redmi-Note-9-Pro-ufficiale-italia-11-1101x800.png'; 
+row3.appendChild(img3);
+let row4= table.insertRow(3);
+let img4 = document.createElement('img'); 
+img4.src = 'https://www.androidworld.it/wp-content/uploads/2020/01/001_galaxya71_black_front-1200x800.jpg'; 
+row3.appendChild(img4);
+let row5= table.insertRow(4);
+let img5 = document.createElement('img'); 
+img5.src = 'https://www.androidworld.it/wp-content/uploads/2019/11/xiaomi-mi-note-10-press-render-9-800x800.jpg'; 
+row4.appendChild(img5);
+
+
+</script>
+
+-->
+
+
+<div><h1>Smartphone Shop Website</h1>
+
+<table>
+    <td>
+    <tr>
+        <img src='https://www.androidworld.it/wp-content/uploads/2019/10/moto-g8-plus-800x800.png' alt="Moto" width=50%>
+        <div><h2>Motorola Moto G8 Plus</h2>
+            <p>Moto G7 updated by a bigger display!<br>Price: €190 <a href='https://www.amazon.it/Motorola-display-fotocamera-altoparlanti-Smartphone/dp/B07Z6X69VW/?ascsubtag=447477-widget-desktop-www.androidworld.it&tag=androidworld-42-21' target='_blank'>(buy on Amazon)</a></p>
+        </div>
+    </tr>
+
+    <tr>
+        <img src='https://www.androidworld.it/wp-content/uploads/2020/09/poco-x3-11-800x800.png' alt="Poco">
+        <div><h2>Poco X3 NFC</h2>
+            <p>A great camera and video in 4K<br>Price: €229 <a href='https://www.amazon.it/dp/B08B992MYF?ascsubtag=447477-widget-desktop-www.androidworld.it&tag=androidworld-42-21' target='_blank'>(buy on Amazon)</a></p>
+        </div>
+    </tr>
+
+    <tr>
+        <img src='https://www.androidworld.it/wp-content/uploads/2020/04/Redmi-Note-9-Pro-ufficiale-italia-11-1101x800.png' alt="Note9">
+        <div><h2>Redmi Note 9 Pro</h2>
+            <p>Good 64 megapixel camera<br>Price: €249 <a href='https://www.amazon.it/Xiaomi-Redmi-Note-Pro-Smartphone/dp/B0881TLSMD?ascsubtag=447477-widget-desktop-www.androidworld.it&tag=androidworld-42-21' target='_blank'>(buy on Amazon)</a></p>
+        </div>
+    </tr>
+
+    <tr>
+        <img src='https://www.androidworld.it/wp-content/uploads/2020/01/001_galaxya71_black_front-1200x800.jpg'alt="A71">
+        <div><h2>Samsung Galaxy A71</h2>
+            <p>Not the best one but camera is above the average for this price<br>Price: €329 <a href='https://www.amazon.it/Smartphone-Fotocamere-Posteriori-Espandibili-Batteria/dp/B00JC8MD6K?ascsubtag=447477-widget-desktop-www.androidworld.it&tag=androidworld-42-21' target='_blank'>(buy on Amazon)</a></p>
+        </div>
+    </tr>
+
+    <tr>
+        <img src='https://www.androidworld.it/wp-content/uploads/2019/11/xiaomi-mi-note-10-press-render-9-800x800.jpg' alt="MiNote">
+        <div><h2>Xiaomi Mi Note 10</h2>
+            <p>The first smartphone with a 108 megapixel sensor<br>Price: €378 <a href='https://www.amazon.it/Xiaomi-Smartphone-Schermo-Curved-Midnight/dp/B07ZGJHS3N?ascsubtag=447477-widget-desktop-www.androidworld.it&tag=androidworld-42-21' target='_blank'>(buy on Amazon)</a></p>
+        </div>
+    </tr>
+</td>
+</table>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11812.877653390435!2d9.19010436166149!3d45.48702563648005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6e71e59774d%3A0x311c5ea14d5a2267!2sCellular%20Shop!5e0!3m2!1sit!2sit!4v1601906879885!5m2!1sit!2sit" width="600" height="450"  allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
+
+</div>
+
+<script>
+
+function ChangeHeader () {
+let newh1=document.querySelector('h1')
+newh1.innerText="The best smartphones out there"
+}
+
+function ChangeBackground () {
+let newback=document.querySelector('body')
+newback.style.backgroundColor="rgb(100,2,33,0.5"
+}
+
+function ChangeFooter () {
+let newaddress=document.querySelector('.address')
+newaddress.innerText= "The Best Smartphone Out There Shop - Billionare blvd. 6666, Los Angeles"
+}
+
+</script>
+
+
+
+<input type="button" id="Change Header" value="Change Header!" onclick="ChangeHeader()" />
+<input type="button" id="Change Background" value="Change Background!" onclick="ChangeBackground()" />
+<input type="button" id="Change Footer Address" value="Change Footer Addreas!" onclick="ChangeFooter()" />
+
+
+<footer><p class="address">Smartphone Shop Website - viale Monza 6, 20127 Milano</p>
+        <p>site made by Dumb Corp.</p>
+
+</footer>
+
+
+</body>
+
+</html>
