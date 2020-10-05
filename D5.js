@@ -225,11 +225,16 @@ console.log(RollTheDices(15))
      Write the function HowManyDays that receives a Date and return the number of days that has passed since that day.
   */
 
- /*function daysInMonth (day, month, year) {
-  return new Date(year, month, day).getDate();
+let HowManyDays = function (aDateInTime) {
+  let nd = new Date(aDateInTime)
+  let adayintime = nd.getTime()
+  let tit = new Date()
+  let todayintime = tit.getTime()
+  return Math.round(((todayintime - adayintime) / (24 * 36 * 100000)))
 }
 
-console.log(daysInMonth(3, 8, 2020))*/
+console.log(HowManyDays('2020,8,30'))
+console.log(HowManyDays ('2010,10,4'))
 
 
   /* Ex.10
@@ -399,13 +404,74 @@ console.log (SumYears())
       Write the function SearchMovie that receives a string and returns all the movies with that string in the title
   */
 
+  /*
+
+let SearchMovie = function (aMovieString) {
+  let movieWithString = [];
+  for (i = 0; i < movies.length; i++) {
+    if (movies[i].Title.includes(aMovieString) === true) {
+
+      movieWithString.push(movies[i].Title)
+    }
+  }
+  return movieWithString
+      }
+console.log(SearchMovie("Avengers"))
+console.log(SearchMovie("Lord of the"))
+console.log(SearchMovie("end"))
+
+ */
+
   /* Ex.19
       Write the function SearchAndDivide that receives a string and returns an object with an array "match" with all the movies that contains the title and another array "nonMatch" with the other movies
   */
 
+/*
+
+ let SearchAndDivide = function (aMovieString) {
+  let movieWithString = [];
+  let movieWithoutString =[]
+  for (i = 0; i < movies.length; i++) {
+    if (movies[i].Title.includes(aMovieString) === true) {
+
+      movieWithString.push(movies[i].Title)
+    }
+    else {
+      movieWithoutString.push(movies[i].Title)
+    }
+  }
+  let MatchUnmatch = {
+    match: movieWithString,
+    unmatch: movieWithoutString,
+  }
+  return MatchUnmatch
+}
+
+      
+console.log(SearchAndDivide("Avengers"))
+console.log(SearchAndDivide("Lord of the"))
+console.log(SearchAndDivide("end"))
+
+*/
+
+
   /* Ex.20
      Write the function DeleteX that receives a number and returns an array without the element in that position
   */
+
+let DeleteX = function (terminator) {
+  let arrayOfRoll = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  /*for (i = 0; i < 10; i++) {
+    arrayOfRoll.push(Dice())
+  }*/
+
+  let newArrayOfRoll = arrayOfRoll.slice(0,terminator).concat(arrayOfRoll.slice(terminator +1))
+  return newArrayOfRoll
+}
+
+console.log(DeleteX(2))
+console.log(DeleteX(4))
+console.log(DeleteX(9))
 
   // JS Advanced
 
@@ -430,6 +496,36 @@ console.log (SumYears())
   /* Ex.23
     Create a function IsItPrime that receives a number and return true if the number is a prime number
   */
+
+let IsItPrime = function (toDet) {
+  let PrimeString = 0;
+  let arrayOfRest = [];
+  let anotherArray=[]
+  for (i = 1; i <= toDet; i++) {
+   anotherArray= arrayOfRest[i].push(toDet % i);
+    /* if (arrayOfRest[i] === 0) {
+      PrimeString = (toDet + "è un numero primo")
+    }
+  
+    else {
+      PrimeString = (toDet + "non è un numero primo")
+    } */
+    return arrayOfRest
+  }
+}
+
+console.log(IsItPrime(4))
+console.log(IsItPrime(5))
+console.log(IsItPrime(6))
+console.log(IsItPrime(13))
+console.log(IsItPrime(21))
+console.log(IsItPrime(47))
+console.log(IsItPrime(51))
+console.log(IsItPrime(60))
+console.log(IsItPrime(71))
+
+  
+
 
   /* Movies array is an example array, used for the exs. Don't change it :)  */
 
@@ -548,4 +644,3 @@ console.log (SumYears())
       Poster:
         "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   }]
-    
