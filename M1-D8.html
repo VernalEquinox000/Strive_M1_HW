@@ -171,7 +171,14 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             */
         
      
-    function changeTaskBackgroundColor () {
+
+    function addNewColor() {
+        let newColorValue = document.querySelector('#colorPicker')
+        console.log(newColorValue)
+        changeTaskBackgroundColor(newColorValue.value)
+        }
+
+    function changeTaskBackgroundColor (newColor) {
         let allTheLi=document.querySelectorAll('li')
         for (let i=0; i<allTheLi.length; i++) {
         allTheLi[i].style.backgroundColor="rgb("+ (Math.floor(Math.random() * 256)) +"," + (Math.floor(Math.random() * 256)) +","+ (Math.floor(Math.random() * 256)) +")"
