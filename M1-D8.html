@@ -174,24 +174,26 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
     function addNewColor() {
         let newColorValue = document.querySelector('#colorPicker')
-        console.log(newColorValue)
+        console.log(newColorValue.value)
         changeTaskBackgroundColor(newColorValue.value)
         }
 
     function changeTaskBackgroundColor (newColor) {
         let allTheLi=document.querySelectorAll('li')
         for (let i=0; i<allTheLi.length; i++) {
-        allTheLi[i].style.backgroundColor="rgb("+ (Math.floor(Math.random() * 256)) +"," + (Math.floor(Math.random() * 256)) +","+ (Math.floor(Math.random() * 256)) +")"
+        allTheLi[i].style.backgroundColor=''+newColor+''
                 }
             }
         </script>
 
 
     <input type="color" placeholder="Color" id="colorPicker" />
+    
+    
     <input
       type="button"
       value="Change task background"
-      onclick="changeTaskBackgroundColor()"
+      onclick="addNewColor()"
     />
 
 
