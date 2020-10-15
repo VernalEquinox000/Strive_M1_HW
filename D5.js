@@ -87,9 +87,10 @@ let Dice = function () {
 */
 
 let WhoIsBigger = (n1, n2) => {
-  if (n1 > n2) { return n1 }
+  /*if (n1 > n2) { return n1 }
   else if (n2 > n1) { return n2 }
-  else if (n1 ===n2) {return ("n1 is equal to n2")}
+  else if (n1 ===n2) {return ("n1 is equal to n2")}*/
+  n1>n2? n1: n2 
 }
 
 console.log(WhoIsBigger(7, 8))
@@ -136,9 +137,21 @@ console.log(DeleteOne("Kraftwerk", false))
    Ex.: OnlyLetters("I love 123 whatever")  => returns "I love whatever"
 */
 
-console.log(typeof (123))   //ANCORA DA FARE
-console.log(typeof("123"))
-console.log(typeof("kill me 123"))
+/* let onlyLetters = function (onlyString) {
+  let onlyArray = onlyString.split(" ");
+  let newOnlyArray = [];
+  for (let i = 0; i < onlyArray.length; i++){
+    if (typeof onlyArray[i] === Number) {
+      newOnlyArray = onlyArray.slice(0, i).concat(onlyArray.slice(i+1, onlyArray.length-1))
+    }
+    return newOnlyArray.join("")
+  }
+  return newOnlyArray.join("")
+}
+
+console.log(onlyLetters("What the 123 fuck"))   //ANCORA DA FARE
+console.log(onlyLetters("123"))
+console.log(onlyLetters("kill me 123")) */
 /* Ex.6 
    Write the function IsThisAnEmail that receives a string and returns true if the string is a valid email.
 */
@@ -484,6 +497,18 @@ console.log(DeleteX(9))
     ***
   */
 
+ let HalfTree = function (height) {
+  let string = "*";
+
+  for (i = 1; i <= height; i++) {
+    console.log(string.repeat(i))
+  }
+
+}
+
+console.log(HalfTree(8))
+
+
   /* Ex.22 
     Create a function Tree that receives the height and creates an "*" tree with that height
     Example: 
@@ -493,26 +518,39 @@ console.log(DeleteX(9))
     *****
   */
 
+
+ Tree = function (height) {
+    
+  for (i = 0; i < height; i++) {
+      let blank = (" ").repeat(height - i);
+      let leaves = ("*").repeat((2*i)+1);
+      console.log(blank.concat(leaves).concat(blank))
+      
+  }
+}
+
+console.log(Tree(3))
+console.log(Tree(5))
+console.log(Tree(6))
+console.log(Tree(101))
+
   /* Ex.23
     Create a function IsItPrime that receives a number and return true if the number is a prime number
   */
 
-let IsItPrime = function (toDet) {
-  let PrimeString = 0;
-  let arrayOfRest = [];
-  let anotherArray=[]
-  for (i = 1; i <= toDet; i++) {
-   anotherArray= arrayOfRest[i].push(toDet % i);
-    /* if (arrayOfRest[i] === 0) {
-      PrimeString = (toDet + "è un numero primo")
-    }
-  
-    else {
-      PrimeString = (toDet + "non è un numero primo")
-    } */
-    return arrayOfRest
+ let IsItPrime = function (toDet) {
+  let rest = [];
+  for (i = 0; i < toDet; i++) {
+      if ((toDet % (i + 1)) === 0) {
+          rest.unshift((toDet % (i + 1)))
+      }
   }
+  if (rest.length <= 2) {
+      console.log(toDet + " è un numero primo")}
+  else {console.log(toDet + " NON è un numero primo")}
 }
+    
+
 
 console.log(IsItPrime(4))
 console.log(IsItPrime(5))

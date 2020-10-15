@@ -116,10 +116,13 @@
 
 <!-- ok, I even tried to build the page through JS but I still have a looong road before I can DOMinate it
 <script>
-let newH1 = document.createElement('h1')
-newH1.innerText="Smartphone Shop Website"
-let body=document.querySelector('body')
-body.appendChild(newH1)
+let newDiv=document.createElement('div');
+newDiv.id='containerH1';
+let body=document.querySelector('body');
+body.appendChild(newDiv);
+let newH1 = document.createElement('h1');
+newDiv.appendChild(newH1);
+newH1.innerText="Smartphone Shop Website";
 newH1.style.color='rgb(100,2,5,0.4)'
 
 
@@ -127,7 +130,15 @@ let table =document.createElement('table')
 table.setAttribute("id", 'table')
 body.appendChild(table)
 
-let row1= table.insertRow(0);
+for (i=0; i<5; i++) {
+let rowT= table.insertRow(i);
+let cellT= rowT.insertCell(0); 
+let imgT = createElement('img')
+imgT.src=""
+}
+
+
+
 let img1 = document.createElement('img'); 
 img1.src = 'https://www.androidworld.it/wp-content/uploads/2019/10/moto-g8-plus-800x800.png'; 
 row1.appendChild(img1);
@@ -155,12 +166,21 @@ img5.src = 'https://www.androidworld.it/wp-content/uploads/2019/11/xiaomi-mi-not
 row4.appendChild(img5);
 
 
+
+
 </script>
 
 -->
 
 
-<div><h1>Smartphone Shop Website</h1>
+<div><h1 id="header">Smartphone Shop Website</h1>
+
+    <input type="text" id="bong" />
+    <input type="button" class="button" value="cambia un po'" onclick="changeHeader()"/>
+    <!--
+   <input type="text" id="getNewHeader" />
+    <input type="button" class="button" value="And click here" onclick="changeHeader()"/> -->
+
     <h2>Check out top5 most wanted smartphones!</h2>
 
 <table>
@@ -222,9 +242,20 @@ row4.appendChild(img5);
 
 <script>
 
-function ChangeHeader () {
-let newh1=document.querySelector('h1')
-newh1.innerText="The best smartphones out there"
+/*function  changeHeader () {
+let header = document.querySelector('h1');
+let bong = document.querySelector('#bong');
+header.innerText=bong.value;
+bong="";
+}*/
+
+
+function changeHeader () {
+
+let header=document.querySelector('#header')
+let newInputHeader = document.querySelector('#bong')
+header.innerText=newInputHeader.value
+newInputHeader.value='';
 }
 
 function ChangeBackground () {
@@ -253,7 +284,7 @@ newaddress.innerText= "The Best Smartphone Out There Shop - Billionare blvd. 666
 
 </footer>
 
-
+--->
 </body>
 
 </html>

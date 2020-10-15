@@ -10,17 +10,17 @@ ASSIGNMENT RULES
 Write a function "area" which receives 2 parameters (l1,l2) and calculate the area of the rectangle.
 */
 
-/* let result = 0;
+
 let area = function (l1, l2) {
 
 
-    result = l1 * l2;
+    let result = l1 * l2;
     return (result)
 }
 
 console.log(area(30,44))
 
-*/
+
 
 //OR
 
