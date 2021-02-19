@@ -10,8 +10,17 @@
   </head>
 
   <body>
-    <h1 onmouseover="changeClass()">ommamamammanbdsjdsdsdljshfkdhgkfhbdghkfahfkdhfkdhf</h1>
-
+<table>
+        <tr>
+        <td>
+            <img src='https://www.androidworld.it/wp-content/uploads/2019/11/xiaomi-mi-note-10-press-render-9-800x800.jpg' alt="MiNote">
+            <div class="phone"><h2>Xiaomi Mi Note 10</h2>
+                <p>The first smartphone with a 108 megapixel sensor<br>Price: €378 <a href='https://www.amazon.it/Xiaomi-Smartphone-Schermo-Curved-Midnight/dp/B07ZGJHS3N?ascsubtag=447477-widget-desktop-www.androidworld.it&tag=androidworld-42-21' target='_blank'>(buy on Amazon)</a></p>
+            </div>
+        </td>
+    </tr>
+</td>
+</table>
     <!--
     <script>
         function changeClass() {
@@ -24,12 +33,19 @@
   -->
 
 <script>
-  function changeClass(){
-    let header = document.querySelector('h1');
-    header.classList.add('puppa')
+  let makePuppa = function() {
+  let puppa= document.querySelector('.phone')
+  if (puppa.style.fontSize==""){
+  puppa.style.fontSize="40";}
+  else {puppa.style.fontSize=""}
+  
   }
-</script>
+  let puppa= document.querySelector('.phone')
+  puppa.addEventListener("mouseover", makePuppa)
+  puppa.addEventListener("mouseleave", makePuppa)
 
-  </body>
+  
+</script>
+  
 
 </html>
